@@ -3,6 +3,7 @@ __________________________________________________
 ToDo:
 * Fix up the flip attributes (remove flip altogether?)
 * Think about alternatives for ancients. You can't simply just have A-K in one go (game will go too long).
+* You're using "value", "power", "power level" interchangeably. Please be consistent.
 __________________________________________________
 
 = RULES ------------------------------------------------------------------------------------------------------------------------
