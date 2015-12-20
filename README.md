@@ -1,5 +1,5 @@
-CARD EFFECTS
+# CARD EFFECTS
 
 Just a card game inspired by Duelmasters and Yugioh.
 
-Developed using QT (C++)
+*Developed using QT (C++)*
