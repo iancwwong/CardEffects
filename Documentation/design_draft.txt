@@ -1,0 +1,118 @@
+== CARD EFFECTS (basically yugioh + duelmasters)
+__________________________________________________
+ToDo:
+* Fix up the flip attributes (remove flip altogether?)
+* Think about alternatives for ancients. You can't simply just have A-K in one go (game will go too long).
+__________________________________________________
+
+= RULES ------------------------------------------------------------------------------------------------------------------------
+
+[General stuff]
+
+* The aim of the game is to destroy all the opponents shields (loser is the one that has no shields remaining). A player will lose a shield if they are attacked whilst they have no defending cards on their side of the field. 
+ALTERNATIVELY, a player loses during the draw phase when they have no more cards in the deck. 
+
+* Each card has their own VALUE (Ace: 1, King: 13). These VALUES represent power level. Obviously the higher cards will dominate lower cards when battling.
+
+* A player has cards of up to 2 suits in their deck. Each card can have at most 3 copies.
+
+* When building the deck, please do it BLINDLY (without knowledge of opponent's deck. This reduces the chances of countering another deck, and makes plays more interesting). If you choose not to do this, then noone can really stop you.
+
+[GAMEPLAY]
+
+* The game board looks like this:
+
+------------------------------------------------
+		Battle Field 1
+------------------------------------------------
+------------------------------------------------
+		Battle Field 2
+------------------------------------------------
+   Each battle field can hold up to 4 cards
+
+* Up to 2 suits can be one side of the field at a particular time. 
+
+* At the start, each player has 5 cards in their hand, and 5 shields (10 if longer, 3 if shorter, etc. Very flexible.)
+  Noone can attack in the first turn.
+  A card must be discarded at the End phase when they have 8 or more cards in their hand.
+
+* Cards can be summoned face up or face down. If summoned face down, they can be flipped up the next turn, or if targeted as an attack    target.
+  They are destroyed when battling a card with a higher power level.
+  Cards with power <= 4 can be simply summoned. Higher ones will need sacrifices, listed below:
+	5 - 8: 		1 card
+	9 - 13: 	2 cards
+  In general, card effects are activated ONCE outside of battle phase.
+
+* Fusion summon involves placing a lower-value card on top of a higher value card, or upgrading a card to the next power level (keeping the original in the fusion pile). The power level of the fusion card will be the total of the powers in the pile.
+  When they are destroyed, one of the cards in the fusion is detached instead.
+  Only ONE effect (corresponding to a single card in the fusioned pile) can be activated.
+  A card that is fused becomes a new card entirely (any effects are overridden). If an effect was previously activated prior to fusing,   its effects cannot be activated until next turn.
+
+* When all cards are fusioned, they become an ANCIENT, which has SUPER DUPER effects
+
+* The procedure of a player's turn is as follows:
+	1. Draw Phase
+		- draw 1 card from the top of the deck
+	2. Chill (or Standby) Phase
+		- there may be effects that activate here 
+	3. Pre-battle Phase
+		- summon 1 card (power level <= 4)
+	   OR   - sacrifice 1 card to summon a stronger card (power level >= 5)
+	   OR   - fuse cards (consecutive cards are placed on top of each other)
+			NOTE: Only cards LOWER than the original can be placed
+	   OR   - activate card effects.
+	4. Battle Phase
+		- Have a card attack another card on the opponent's field. If the card with the lower power will be destroyed (if they're the same, both are destroyed). When a fused card is destroyed, either the lowest or highest card is removed. The destroyed/removed cards go into the dead pile.
+	   OR   - Attack the opponent directly (in which case the defending player loses ONE shield)
+	5. Post-battle Phase
+		- Can summon a card if none were summoned before
+		- Activate any effects from cards that aren't already activated
+	6. End Phase
+		- Player ends. Next player's turn
+
+= ACTUAL CARD EFFECTS -----------------------------------------------------------------------------------------------------------
+(
+In general, lower power value cards will have better effects. This is to trade power for a stronger effect. Boundary-sacrifice cards (like 5 and 9) should have better effects than other cards that require the same amount of sacrifices.
+
+Suit styles:
+	
+* HEARTS mean LIVES. They are all about keeping the player alive in terms of shields, and reviving cards. Essentially, out sustaining the enemy.
+
+* DIAMONDS mean DEFENSE. They are all about protecting the cards on the battlefield, hand, and graveyard. They help to achieve victory by providing an ultimate line of soldiers that prevent the player from being scathed.
+
+* SPADES mean UTILITY. They are all about being passive-aggressive (not relying on direct combat) to defeat the enemy. These include bypassing combat lines, crippling the enemy's hand / battlefield, or sneaky tricks.
+
+* CLUBS mean BATTLE. They are the best when it comes to combat on the battlefield (destroying other cards).
+)
+	
+
+[REGULAR CARDS]
+= Joker
+* This is the devil card itself (brings benefits and consequences to whoever played it).
+
+= Hearts
+
+= Diamonds
+
+= Spades
+
+= Clubs
+
+[ANCIENTS]
+
+= Hearts
+
+= Diamonds
+
+= Spades
+
+= Clubs 
+
+
+
+
+
+
+
+
+
