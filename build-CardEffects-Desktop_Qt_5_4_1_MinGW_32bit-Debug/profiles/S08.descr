@@ -1,0 +1,8 @@
+#name
+Spades: 8
+#suit
+S
+#value
+8
+#effect
+Face-up: Halve a card's power level until the end phase.

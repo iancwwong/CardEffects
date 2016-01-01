@@ -1,0 +1,8 @@
+#name
+Spades: 9
+#suit
+S
+#value
+9
+#effect
+Face-up: Target one card on the battlefield. If its power level is <= 9, destroy it. This card cannot attack if this effect is activated.
