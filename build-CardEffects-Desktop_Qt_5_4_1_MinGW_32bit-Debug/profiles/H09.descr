@@ -1,1 +1,8 @@
-#name=Hearts: 9#suit=H#value=9#effect=Face-up: Summon a HEART card from the graveyard.
+#name
+Hearts: 9
+#suit
+H
+#value
+9
+#effect
+Face-up: Summon a HEART card from the graveyard.

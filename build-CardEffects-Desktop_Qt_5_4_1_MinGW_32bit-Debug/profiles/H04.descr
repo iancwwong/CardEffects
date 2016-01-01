@@ -1,1 +1,8 @@
-#name=Hearts: 4#suit=H#value=4#effect=Face-up: If this is the only card in your battlefield, you can summon one extra card this turn (includes sacrifice and fusion).
+#name
+Hearts: 4
+#suit
+H
+#value
+4
+#effect
+Face-up: If this is the only card in your battlefield, you can summon one extra card this turn (includes sacrifice and fusion).

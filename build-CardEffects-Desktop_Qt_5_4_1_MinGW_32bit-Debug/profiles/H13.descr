@@ -1,1 +1,8 @@
-#name=Hearts: King#suit=H#value=13#effect=Sacrifice Summoned: Gain 3 shields.
+#name
+Hearts: King
+#suit
+H
+#value
+13
+#effect
+Sacrifice Summoned: Gain 3 shields.

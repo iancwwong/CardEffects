@@ -1,1 +1,8 @@
-#name=Hearts: Queen#suit=H#value=12#effect=Sacrifice Summoned: Shuffle all heart cards from your graveyard into your deck.
+#name
+Hearts: Queen
+#suit
+H
+#value
+12
+#effect
+Sacrifice Summoned: Shuffle all heart cards from your graveyard into your deck.

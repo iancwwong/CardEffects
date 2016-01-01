@@ -36,7 +36,7 @@ void MainWindow::on_CardSelectBar_activated(const QString &arg1)
         QString codeName = toCodeName(cardSelected);
 
         // Obtain the appropriate description for the card selected
-        // NOTE: .descr file contains a SINGLE line
+        // by opening the correct file
         QString filename = "./profiles/";
         filename.append(codeName);
         filename.append(".descr");
@@ -48,9 +48,23 @@ void MainWindow::on_CardSelectBar_activated(const QString &arg1)
             return;
         }
 
+        // Search for the description, depicted in a section labelled under "#effect"
+        QString cardDescription;
         QTextStream in(&file);
-        QString line = in.readLine();
-        QString cardDescription = line.split(QChar('=')).last();
+        while (!in.atEnd()) {
+            QString line = in.readLine();
+            if (line == "#effect") {
+                while (!in.atEnd()) {
+                    QString effectLine = in.readLine();
+                    if (effectLine.startsWith(QChar('#'))) {
+                        break;
+                    }
+                    cardDescription.append(effectLine);
+                    cardDescription.append("\n");
+                }
+            }
+
+        }
         ui->CardDescriptionBox->setText(cardDescription);
     }
 }

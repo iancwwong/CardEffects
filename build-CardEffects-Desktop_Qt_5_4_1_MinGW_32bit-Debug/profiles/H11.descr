@@ -1,1 +1,8 @@
-#name=Hearts: Jack#suit=H#value=11#effect=Face-up: Every time you destroy an opponent's card, put a card from the graveyard into your hand.
+#name
+Hearts: Jack
+#suit
+H
+#value
+11
+#effect
+Face-up: Every time you destroy an opponent's card, put a card from the graveyard into your hand.
