@@ -13,8 +13,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->CardSelectBar->setMaxVisibleItems((int)NUM_CARDS/2 + 1);       // add the joker
     addCardSelectionItems(ui->CardSelectBar);
 
-    // Customise the search bar
-    ui->CardSearchBar->setPlaceholderText("Search for a card");
 }
 
 MainWindow::~MainWindow()
@@ -38,9 +36,22 @@ void MainWindow::on_CardSelectBar_activated(const QString &arg1)
         QString codeName = toCodeName(cardSelected);
 
         // Obtain the appropriate description for the card selected
-        // Cardobject cardObject = CardObjects->value(CardObjects->indexOf(codeName));
-        // ui->CardDescriptionBox->setText(cardObject.getDescription());
-        ui->CardDescriptionBox->setText("Some description.");
+        // NOTE: .descr file contains a SINGLE line
+        QString filename = "./profiles/";
+        filename.append(codeName);
+        filename.append(".descr");
+
+        QFile file(filename);
+        if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            int errorVal = (int)file.error();
+            cout << "Error opening file. Error code: " << errorVal << endl;
+            return;
+        }
+
+        QTextStream in(&file);
+        QString line = in.readLine();
+        QString cardDescription = line.split(QChar('=')).last();
+        ui->CardDescriptionBox->setText(cardDescription);
     }
 }
 
@@ -107,5 +118,85 @@ void MainWindow::addCardSelectionItems(QComboBox * comboBox) {
 
     // Add the list as a set of items into the combobox
     comboBox->addItems(cardList);
+}
+
+// Translate a card's textual name to its code name
+// eg textual name = Hearts: Ace
+//    code name    = H01
+QString MainWindow::toCodeName(QString cardTextName) {
+    QString codeName;
+
+    // Remove all the spaces in the string
+    cardTextName.remove(QChar(' '));
+
+    // Check the suit
+    QString chosenSuit = cardTextName.split(QChar(':')).first();
+    QStringList cardSuits;
+    cardSuits.append("Hearts");
+    cardSuits.append("Diamonds");
+    cardSuits.append("Spades");
+    cardSuits.append("Clubs");
+    cardSuits.append("Other");
+
+    switch(cardSuits.indexOf(chosenSuit)) {
+        case 0:     // Hearts
+            codeName.append("H");
+            break;
+        case 1:     // Diamonds
+            codeName.append("D");
+            break;
+        case 2:     // Spades
+            codeName.append("S");
+            break;
+        case 3:     // Clubs
+            codeName.append("C");
+            break;
+        case 4:     // Other
+            codeName.append("O");
+            break;
+        default:
+            // Weird name
+            codeName.append("-");
+            break;
+    }
+
+    // Check the value
+    QString chosenValue = cardTextName.split(QChar(':')).last();
+    QStringList cardValues;
+    cardValues.append("Ace");
+    cardValues.append("Jack");
+    cardValues.append("Queen");
+    cardValues.append("King");
+
+    // Special value cards
+    cardValues.append("Joker");
+
+    switch(cardValues.indexOf(chosenValue)) {
+        case 0:     // Ace
+            codeName.append("01");
+            break;
+        case 1:     // Jack
+            codeName.append("11");
+            break;
+        case 2:     // Queen
+            codeName.append("12");
+            break;
+        case 3:     // King
+            codeName.append("13");
+            break;
+        case 4:     // Joker
+            codeName.append("00");
+            break;
+        default:
+            // Assume numerical value
+            int value = cardTextName.split(QChar(':')).last().toInt();
+            if (value < 10) {
+                codeName.append("0");
+            }
+            codeName.append(chosenValue);
+            break;
+    }
+
+    return codeName;
 }
 

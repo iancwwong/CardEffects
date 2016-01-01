@@ -10,6 +10,11 @@
 // ==   DATA REPRESENTATION     ==
 #include <QVector>
 #include <QStringList>
+#include <QFile>    // for reading files
+#include <QTextStream>
+#include <iostream> // debugging
+
+using namespace std;
 
 namespace Ui {
 class MainWindow;
@@ -40,6 +45,7 @@ private:
 
     // Private functions
     void addCardSelectionItems(QComboBox * comboBox);
+    QString toCodeName(QString cardTextName);
 };
 
 #endif // MAINWINDOW_H

@@ -18,10 +18,10 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QToolBar>
@@ -43,9 +43,9 @@ public:
     QTextBrowser *CardDescriptionBox;
     QWidget *horizontalLayoutWidget;
     QHBoxLayout *horizontalLayout;
-    QLineEdit *CardSearchBar;
-    QLabel *label;
+    QSpacerItem *horizontalSpacer;
     QComboBox *CardSelectBar;
+    QSpacerItem *horizontalSpacer_2;
     QMenuBar *menuBar;
     QMenu *menuAbout;
     QMenu *menuFile;
@@ -56,7 +56,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(539, 450);
+        MainWindow->resize(546, 421);
         actionAbout = new QAction(MainWindow);
         actionAbout->setObjectName(QStringLiteral("actionAbout"));
         actionExit = new QAction(MainWindow);
@@ -65,12 +65,12 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         frame = new QFrame(centralWidget);
         frame->setObjectName(QStringLiteral("frame"));
-        frame->setGeometry(QRect(10, 0, 521, 401));
+        frame->setGeometry(QRect(10, 10, 521, 401));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
         verticalLayoutWidget = new QWidget(frame);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(0, 40, 271, 321));
+        verticalLayoutWidget->setGeometry(QRect(0, 0, 271, 321));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
@@ -88,38 +88,35 @@ public:
 
         horizontalLayoutWidget = new QWidget(frame);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(0, 0, 521, 31));
+        horizontalLayoutWidget->setGeometry(QRect(280, 0, 241, 31));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        CardSearchBar = new QLineEdit(horizontalLayoutWidget);
-        CardSearchBar->setObjectName(QStringLiteral("CardSearchBar"));
-        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(CardSearchBar->sizePolicy().hasHeightForWidth());
-        CardSearchBar->setSizePolicy(sizePolicy);
-        CardSearchBar->setMinimumSize(QSize(50, 0));
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout->addWidget(CardSearchBar);
-
-        label = new QLabel(horizontalLayoutWidget);
-        label->setObjectName(QStringLiteral("label"));
-        label->setMinimumSize(QSize(5, 0));
-
-        horizontalLayout->addWidget(label, 0, Qt::AlignHCenter);
+        horizontalLayout->addItem(horizontalSpacer);
 
         CardSelectBar = new QComboBox(horizontalLayoutWidget);
         CardSelectBar->setObjectName(QStringLiteral("CardSelectBar"));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(CardSelectBar->sizePolicy().hasHeightForWidth());
+        CardSelectBar->setSizePolicy(sizePolicy);
+        CardSelectBar->setMinimumSize(QSize(150, 0));
 
         horizontalLayout->addWidget(CardSelectBar);
+
+        horizontalSpacer_2 = new QSpacerItem(50, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_2);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 539, 21));
+        menuBar->setGeometry(QRect(0, 0, 546, 21));
         menuAbout = new QMenu(menuBar);
         menuAbout->setObjectName(QStringLiteral("menuAbout"));
         menuFile = new QMenu(menuBar);
@@ -149,7 +146,6 @@ public:
         actionAbout->setText(QApplication::translate("MainWindow", "About", 0));
         actionExit->setText(QApplication::translate("MainWindow", "Exit", 0));
         label_2->setText(QApplication::translate("MainWindow", "Effect Description:", 0));
-        label->setText(QApplication::translate("MainWindow", "or", 0));
         CardSelectBar->clear();
         CardSelectBar->insertItems(0, QStringList()
          << QApplication::translate("MainWindow", "Select a card", 0)
