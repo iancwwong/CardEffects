@@ -40,12 +40,12 @@ public:
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
     QLabel *label_2;
-    QTextBrowser *textBrowser;
+    QTextBrowser *CardDescriptionBox;
     QWidget *horizontalLayoutWidget;
     QHBoxLayout *horizontalLayout;
-    QComboBox *CardSelectBar;
-    QLabel *label;
     QLineEdit *CardSearchBar;
+    QLabel *label;
+    QComboBox *CardSelectBar;
     QMenuBar *menuBar;
     QMenu *menuAbout;
     QMenu *menuFile;
@@ -81,10 +81,10 @@ public:
 
         verticalLayout->addWidget(label_2);
 
-        textBrowser = new QTextBrowser(verticalLayoutWidget);
-        textBrowser->setObjectName(QStringLiteral("textBrowser"));
+        CardDescriptionBox = new QTextBrowser(verticalLayoutWidget);
+        CardDescriptionBox->setObjectName(QStringLiteral("CardDescriptionBox"));
 
-        verticalLayout->addWidget(textBrowser);
+        verticalLayout->addWidget(CardDescriptionBox);
 
         horizontalLayoutWidget = new QWidget(frame);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
@@ -94,17 +94,6 @@ public:
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        CardSelectBar = new QComboBox(horizontalLayoutWidget);
-        CardSelectBar->setObjectName(QStringLiteral("CardSelectBar"));
-
-        horizontalLayout->addWidget(CardSelectBar);
-
-        label = new QLabel(horizontalLayoutWidget);
-        label->setObjectName(QStringLiteral("label"));
-        label->setMinimumSize(QSize(5, 0));
-
-        horizontalLayout->addWidget(label, 0, Qt::AlignHCenter);
-
         CardSearchBar = new QLineEdit(horizontalLayoutWidget);
         CardSearchBar->setObjectName(QStringLiteral("CardSearchBar"));
         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
@@ -115,6 +104,17 @@ public:
         CardSearchBar->setMinimumSize(QSize(50, 0));
 
         horizontalLayout->addWidget(CardSearchBar);
+
+        label = new QLabel(horizontalLayoutWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setMinimumSize(QSize(5, 0));
+
+        horizontalLayout->addWidget(label, 0, Qt::AlignHCenter);
+
+        CardSelectBar = new QComboBox(horizontalLayoutWidget);
+        CardSelectBar->setObjectName(QStringLiteral("CardSelectBar"));
+
+        horizontalLayout->addWidget(CardSelectBar);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
@@ -149,11 +149,11 @@ public:
         actionAbout->setText(QApplication::translate("MainWindow", "About", 0));
         actionExit->setText(QApplication::translate("MainWindow", "Exit", 0));
         label_2->setText(QApplication::translate("MainWindow", "Effect Description:", 0));
+        label->setText(QApplication::translate("MainWindow", "or", 0));
         CardSelectBar->clear();
         CardSelectBar->insertItems(0, QStringList()
          << QApplication::translate("MainWindow", "Select a card", 0)
         );
-        label->setText(QApplication::translate("MainWindow", "or", 0));
         menuAbout->setTitle(QApplication::translate("MainWindow", "Help", 0));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", 0));
     } // retranslateUi

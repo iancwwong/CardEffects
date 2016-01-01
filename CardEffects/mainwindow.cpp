@@ -10,8 +10,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     // Customise the select card dropdown list
-    addCardSelectionItems(ui->CardSelectBar);
     ui->CardSelectBar->setMaxVisibleItems((int)NUM_CARDS/2 + 1);       // add the joker
+    addCardSelectionItems(ui->CardSelectBar);
 
     // Customise the search bar
     ui->CardSearchBar->setPlaceholderText("Search for a card");
@@ -20,6 +20,28 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+// ==   INTERFACE ACTIONS   ==
+
+// Action when user selects a card
+void MainWindow::on_CardSelectBar_activated(const QString &arg1)
+{
+    QString cardSelected = arg1;
+    if (cardSelected == "Select a card") {
+
+        // Clear the effect description box
+        ui->CardDescriptionBox->setText("");
+    } else {
+
+        // Translate the card name into its code name
+        QString codeName = toCodeName(cardSelected);
+
+        // Obtain the appropriate description for the card selected
+        // Cardobject cardObject = CardObjects->value(CardObjects->indexOf(codeName));
+        // ui->CardDescriptionBox->setText(cardObject.getDescription());
+        ui->CardDescriptionBox->setText("Some description.");
+    }
 }
 
 
@@ -86,3 +108,4 @@ void MainWindow::addCardSelectionItems(QComboBox * comboBox) {
     // Add the list as a set of items into the combobox
     comboBox->addItems(cardList);
 }
+

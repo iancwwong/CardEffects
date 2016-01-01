@@ -23,10 +23,16 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-// Menu Bar actions
+// Actions
 private slots:
+
+    // Card Select Combo Box
+    void on_CardSelectBar_activated(const QString &arg1);
+
+    // Menu Bar
     void on_actionAbout_triggered();
     void on_actionExit_triggered();
+
 
 private:
     Ui::MainWindow *ui;
