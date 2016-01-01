@@ -9,10 +9,13 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    // Initialise the mapping of card names
+    this->cardNameMap = new QMap<QString, QString>();
+    initialiseCardNameMapping(this->cardNameMap);
+
     // Customise the select card dropdown list
     ui->CardSelectBar->setMaxVisibleItems((int)NUM_CARDS/2 + 1);       // add the joker
     addCardSelectionItems(ui->CardSelectBar);
-
 }
 
 MainWindow::~MainWindow()
@@ -86,6 +89,8 @@ void MainWindow::on_actionAbout_triggered()
 // ==   PRIVATE FUNCTIONS   ==
 
 // Populate a combobox with all 52 playing cards and Joker
+// NOTE: Does NOT make use of the keys in the map, as order of items in the
+//       combobox is important
 void MainWindow::addCardSelectionItems(QComboBox * comboBox) {
 
     // Create the list of cards into a list
@@ -134,83 +139,82 @@ void MainWindow::addCardSelectionItems(QComboBox * comboBox) {
     comboBox->addItems(cardList);
 }
 
+// Initialise the (key,value) hash table for the card name
+// KEY: Text Name, VALUE: Code Name
+void MainWindow::initialiseCardNameMapping(QMap<QString, QString> * map) {
+
+    // Add the HEARTS cards
+    map->insert(QString("Hearts: Ace"), QString("H01"));
+    map->insert(QString("Hearts: 2"), QString("H02"));
+    map->insert(QString("Hearts: 3"), QString("H03"));
+    map->insert(QString("Hearts: 4"), QString("H04"));
+    map->insert(QString("Hearts: 5"), QString("H05"));
+    map->insert(QString("Hearts: 6"), QString("H06"));
+    map->insert(QString("Hearts: 7"), QString("H07"));
+    map->insert(QString("Hearts: 8"), QString("H08"));
+    map->insert(QString("Hearts: 9"), QString("H09"));
+    map->insert(QString("Hearts: 10"), QString("H10"));
+    map->insert(QString("Hearts: Jack"), QString("H11"));
+    map->insert(QString("Hearts: Queen"), QString("H12"));
+    map->insert(QString("Hearts: King"), QString("H13"));
+
+    // Add the DIAMONDS cards
+    map->insert(QString("Diamonds: Ace"), QString("D01"));
+    map->insert(QString("Diamonds: 2"), QString("D02"));
+    map->insert(QString("Diamonds: 3"), QString("D03"));
+    map->insert(QString("Diamonds: 4"), QString("D04"));
+    map->insert(QString("Diamonds: 5"), QString("D05"));
+    map->insert(QString("Diamonds: 6"), QString("D06"));
+    map->insert(QString("Diamonds: 7"), QString("D07"));
+    map->insert(QString("Diamonds: 8"), QString("D08"));
+    map->insert(QString("Diamonds: 9"), QString("D09"));
+    map->insert(QString("Diamonds: 10"), QString("D10"));
+    map->insert(QString("Diamonds: Jack"), QString("D11"));
+    map->insert(QString("Diamonds: Queen"), QString("D12"));
+    map->insert(QString("Diamonds: King"), QString("D13"));
+
+    // Add the SPADES cards
+    map->insert(QString("Spades: Ace"), QString("S01"));
+    map->insert(QString("Spades: 2"), QString("S02"));
+    map->insert(QString("Spades: 3"), QString("S03"));
+    map->insert(QString("Spades: 4"), QString("S04"));
+    map->insert(QString("Spades: 5"), QString("S05"));
+    map->insert(QString("Spades: 6"), QString("S06"));
+    map->insert(QString("Spades: 7"), QString("S07"));
+    map->insert(QString("Spades: 8"), QString("S08"));
+    map->insert(QString("Spades: 9"), QString("S09"));
+    map->insert(QString("Spades: 10"), QString("S10"));
+    map->insert(QString("Spades: Jack"), QString("S11"));
+    map->insert(QString("Spades: Queen"), QString("S12"));
+    map->insert(QString("Spades: King"), QString("S13"));
+
+    // Add the CLUBS cards
+    map->insert(QString("Clubs: Ace"), QString("C01"));
+    map->insert(QString("Clubs: 2"), QString("C02"));
+    map->insert(QString("Clubs: 3"), QString("C03"));
+    map->insert(QString("Clubs: 4"), QString("C04"));
+    map->insert(QString("Clubs: 5"), QString("C05"));
+    map->insert(QString("Clubs: 6"), QString("C06"));
+    map->insert(QString("Clubs: 7"), QString("C07"));
+    map->insert(QString("Clubs: 8"), QString("C08"));
+    map->insert(QString("Clubs: 9"), QString("C09"));
+    map->insert(QString("Clubs: 10"), QString("C10"));
+    map->insert(QString("Clubs: Jack"), QString("C11"));
+    map->insert(QString("Clubs: Queen"), QString("C12"));
+    map->insert(QString("Clubs: King"), QString("C13"));
+
+    // Add the SPECIAL cards
+    map->insert(QString("Other: Joker"), QString("O00"));
+
+}
+
 // Translate a card's textual name to its code name
 // eg textual name = Hearts: Ace
 //    code name    = H01
 QString MainWindow::toCodeName(QString cardTextName) {
-    QString codeName;
 
-    // Remove all the spaces in the string
-    cardTextName.remove(QChar(' '));
+    QString result = this->cardNameMap->value(cardTextName);
+    return result;
 
-    // Check the suit
-    QString chosenSuit = cardTextName.split(QChar(':')).first();
-    QStringList cardSuits;
-    cardSuits.append("Hearts");
-    cardSuits.append("Diamonds");
-    cardSuits.append("Spades");
-    cardSuits.append("Clubs");
-    cardSuits.append("Other");
-
-    switch(cardSuits.indexOf(chosenSuit)) {
-        case 0:     // Hearts
-            codeName.append("H");
-            break;
-        case 1:     // Diamonds
-            codeName.append("D");
-            break;
-        case 2:     // Spades
-            codeName.append("S");
-            break;
-        case 3:     // Clubs
-            codeName.append("C");
-            break;
-        case 4:     // Other
-            codeName.append("O");
-            break;
-        default:
-            // Weird name
-            codeName.append("-");
-            break;
-    }
-
-    // Check the value
-    QString chosenValue = cardTextName.split(QChar(':')).last();
-    QStringList cardValues;
-    cardValues.append("Ace");
-    cardValues.append("Jack");
-    cardValues.append("Queen");
-    cardValues.append("King");
-
-    // Special value cards
-    cardValues.append("Joker");
-
-    switch(cardValues.indexOf(chosenValue)) {
-        case 0:     // Ace
-            codeName.append("01");
-            break;
-        case 1:     // Jack
-            codeName.append("11");
-            break;
-        case 2:     // Queen
-            codeName.append("12");
-            break;
-        case 3:     // King
-            codeName.append("13");
-            break;
-        case 4:     // Joker
-            codeName.append("00");
-            break;
-        default:
-            // Assume numerical value
-            int value = cardTextName.split(QChar(':')).last().toInt();
-            if (value < 10) {
-                codeName.append("0");
-            }
-            codeName.append(chosenValue);
-            break;
-    }
-
-    return codeName;
 }
 

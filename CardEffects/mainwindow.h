@@ -10,6 +10,7 @@
 // ==   DATA REPRESENTATION     ==
 #include <QVector>
 #include <QStringList>
+#include <QMap>
 #include <QFile>    // for reading files
 #include <QTextStream>
 #include <iostream> // debugging
@@ -25,6 +26,9 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    // ==   ATTRIBUTES  ==
+    QMap<QString, QString> * cardNameMap;
+
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
@@ -40,11 +44,20 @@ private slots:
 
 
 private:
+
+    //  ==  ATTRIBUTES          ==
     Ui::MainWindow *ui;
     const int NUM_CARDS = 52;
 
-    // Private functions
+    // ==   PRIVATE FUNCTIONS   ==
+
+    // Initialise the items in the dropdown list for viewing card effect
     void addCardSelectionItems(QComboBox * comboBox);
+
+    // Initialise the mappings of the card names (
+    void initialiseCardNameMapping(QMap<QString, QString> * map);
+
+    // translate a card's text name to its code name
     QString toCodeName(QString cardTextName);
 };
 
