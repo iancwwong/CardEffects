@@ -5,7 +5,8 @@ and can affect the gameplay in a variety of ways.
 
 ## Screenshots
 
-Card Viewer:
+* Card Viewer:
+
 ![alt tag](https://raw.github.com/iancwwong/CardEffects/master/Screenshots/card_viewer.png)
 
 
