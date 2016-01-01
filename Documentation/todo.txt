@@ -1,0 +1,3 @@
+== Iffy effects
+* Diamonds: 7
+* Spades: 7
