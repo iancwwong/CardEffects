@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2015-12-14T11:19:30
+# Project created by QtCreator 2015-12-27T12:12:56
 #
 #-------------------------------------------------
 
@@ -12,11 +12,9 @@ TARGET = CardEffects
 TEMPLATE = app
 
 
-SOURCES += main.cpp \
-    cardviewerui.cpp
+SOURCES += main.cpp\
+        mainwindow.cpp
 
-HEADERS  += \
-    cardviewerui.h
+HEADERS  += mainwindow.h
 
-FORMS    += \
-    cardviewerui.ui
+FORMS    += mainwindow.ui
