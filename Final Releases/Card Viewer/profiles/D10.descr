@@ -1,0 +1,8 @@
+#name
+Diamonds: 10
+#suit
+D
+#value
+10
+#effect
+Face-up: Reduce this card's power level by 1 to summon two cards, that cannot be sacrificed, attack, or have their effects activated. Destroy them at your opponent's end phase.

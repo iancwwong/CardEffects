@@ -21,4 +21,4 @@ FORMS    += mainwindow.ui
 
 RC_FILE = CardEffects.rc
 
-RESOURCES = CardEffects.qrc
+#RESOURCES = CardEffects.qrc

@@ -1,0 +1,8 @@
+#name
+Spades: 5
+#suit
+S
+#value
+5
+#effect
+Face-up: If this card is attacked, destroy up to two cards (except the attacking card) on your opponent's side of the field that has a power level <= the power level of the attacking card.
