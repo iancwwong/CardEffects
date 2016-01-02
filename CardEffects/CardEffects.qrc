@@ -1,6 +1,62 @@
 <!DOCTYPE RCC><RCC version="1.0">
 <qresource>
-    <file>img/default_back.png</file>
+	
+	<file>profiles/H01.descr</file>
+	<file>profiles/H02.descr</file>
+	<file>profiles/H03.descr</file>
+	<file>profiles/H04.descr</file>
+	<file>profiles/H05.descr</file>
+	<file>profiles/H06.descr</file>
+	<file>profiles/H07.descr</file>
+	<file>profiles/H08.descr</file>
+	<file>profiles/H09.descr</file>
+	<file>profiles/H10.descr</file>
+	<file>profiles/H11.descr</file>
+	<file>profiles/H12.descr</file>
+	<file>profiles/H13.descr</file>	
+	<file>profiles/D01.descr</file>
+	<file>profiles/D02.descr</file>
+	<file>profiles/D03.descr</file>
+	<file>profiles/D04.descr</file>
+	<file>profiles/D05.descr</file>
+	<file>profiles/D06.descr</file>
+	<file>profiles/D07.descr</file>
+	<file>profiles/D08.descr</file>
+	<file>profiles/D09.descr</file>
+	<file>profiles/D10.descr</file>
+	<file>profiles/D11.descr</file>
+	<file>profiles/D12.descr</file>
+	<file>profiles/D13.descr</file>
+	<file>profiles/S01.descr</file>
+	<file>profiles/S02.descr</file>
+	<file>profiles/S03.descr</file>
+	<file>profiles/S04.descr</file>
+	<file>profiles/S05.descr</file>
+	<file>profiles/S06.descr</file>
+	<file>profiles/S07.descr</file>
+	<file>profiles/S08.descr</file>
+	<file>profiles/S09.descr</file>
+	<file>profiles/S10.descr</file>
+	<file>profiles/S11.descr</file>
+	<file>profiles/S12.descr</file>
+	<file>profiles/S13.descr</file>
+	<file>profiles/C01.descr</file>
+	<file>profiles/C02.descr</file>
+	<file>profiles/C03.descr</file>
+	<file>profiles/C04.descr</file>
+	<file>profiles/C05.descr</file>
+	<file>profiles/C06.descr</file>
+	<file>profiles/C07.descr</file>
+	<file>profiles/C08.descr</file>
+	<file>profiles/C09.descr</file>
+	<file>profiles/C10.descr</file>
+	<file>profiles/C11.descr</file>
+	<file>profiles/C12.descr</file>
+	<file>profiles/C13.descr</file>
+	<file>profiles/O00.descr</file>
+	
+	<file>img/default_back.png</file>
 	<file>img/H01_front.png</file>
+	
 </qresource>
 </RCC>

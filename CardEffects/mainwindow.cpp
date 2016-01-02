@@ -52,7 +52,7 @@ void MainWindow::on_CardSelectBar_activated(const QString &arg1)
 
         // Obtain the appropriate description for the card selected
         // by opening the correct file
-        QString filename = "./profiles/";
+        QString filename = ":/profiles/";
         filename.append(codeName);
         filename.append(".descr");
 

@@ -114,7 +114,60 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug/qrc_CardEffects.cpp
 debug/qrc_CardEffects.cpp: ../CardEffects/CardEffects.qrc \
 		../CardEffects/img/H01_front.png \
-		../CardEffects/img/default_back.png
+		../CardEffects/img/default_back.png \
+		../CardEffects/profiles/H09.descr \
+		../CardEffects/profiles/S10.descr \
+		../CardEffects/profiles/D08.descr \
+		../CardEffects/profiles/S01.descr \
+		../CardEffects/profiles/H05.descr \
+		../CardEffects/profiles/O00.descr \
+		../CardEffects/profiles/C06.descr \
+		../CardEffects/profiles/S07.descr \
+		../CardEffects/profiles/D04.descr \
+		../CardEffects/profiles/H10.descr \
+		../CardEffects/profiles/H01.descr \
+		../CardEffects/profiles/S12.descr \
+		../CardEffects/profiles/C02.descr \
+		../CardEffects/profiles/D05.descr \
+		../CardEffects/profiles/S03.descr \
+		../CardEffects/profiles/H11.descr \
+		../CardEffects/profiles/H07.descr \
+		../CardEffects/profiles/C12.descr \
+		../CardEffects/profiles/D10.descr \
+		../CardEffects/profiles/S09.descr \
+		../CardEffects/profiles/C03.descr \
+		../CardEffects/profiles/D01.descr \
+		../CardEffects/profiles/H08.descr \
+		../CardEffects/profiles/C09.descr \
+		../CardEffects/profiles/D07.descr \
+		../CardEffects/profiles/S05.descr \
+		../CardEffects/profiles/H13.descr \
+		../CardEffects/profiles/D12.descr \
+		../CardEffects/profiles/H04.descr \
+		../CardEffects/profiles/C05.descr \
+		../CardEffects/profiles/D03.descr \
+		../CardEffects/profiles/S06.descr \
+		../CardEffects/profiles/C10.descr \
+		../CardEffects/profiles/D13.descr \
+		../CardEffects/profiles/S11.descr \
+		../CardEffects/profiles/D09.descr \
+		../CardEffects/profiles/C01.descr \
+		../CardEffects/profiles/S02.descr \
+		../CardEffects/profiles/H06.descr \
+		../CardEffects/profiles/C11.descr \
+		../CardEffects/profiles/C07.descr \
+		../CardEffects/profiles/S08.descr \
+		../CardEffects/profiles/H02.descr \
+		../CardEffects/profiles/S13.descr \
+		../CardEffects/profiles/C08.descr \
+		../CardEffects/profiles/D06.descr \
+		../CardEffects/profiles/S04.descr \
+		../CardEffects/profiles/H12.descr \
+		../CardEffects/profiles/C13.descr \
+		../CardEffects/profiles/D11.descr \
+		../CardEffects/profiles/H03.descr \
+		../CardEffects/profiles/C04.descr \
+		../CardEffects/profiles/D02.descr
 	'C:\Qt\5.4\mingw491_32\bin\rcc.exe' -name CardEffects ../CardEffects/CardEffects.qrc -o debug/qrc_CardEffects.cpp
 
 compiler_moc_header_make_all: debug/moc_mainwindow.cpp
