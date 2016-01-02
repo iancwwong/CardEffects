@@ -86,7 +86,7 @@ void MainWindow::on_CardSelectBar_activated(const QString &arg1)
         QString imgfilename = ":/img/";
         imgfilename.append(codeName);
         imgfilename.append("_front.png");
-        QPixmap * cardImg = new QPixmap(":/img/H01_front.png");
+        QPixmap * cardImg = new QPixmap(imgfilename);
         ui->CardDisplayBox->setPixmap(*cardImg);
         delete cardImg;
     }

@@ -57,6 +57,45 @@
 	
 	<file>img/default_back.png</file>
 	<file>img/H01_front.png</file>
+	<file>img/H02_front.png</file>
+	<file>img/H03_front.png</file>
+	<file>img/H04_front.png</file>
+	<file>img/H05_front.png</file>
+	<file>img/H06_front.png</file>
+	<file>img/H07_front.png</file>
+	<file>img/H08_front.png</file>
+	<file>img/H09_front.png</file>
+	<file>img/H10_front.png</file>
+	<file>img/H11_front.png</file>
+	<file>img/H12_front.png</file>
+	<file>img/H13_front.png</file>
+	<file>img/D01_front.png</file>
+	<file>img/D02_front.png</file>
+	<file>img/D03_front.png</file>
+	<file>img/D04_front.png</file>
+	<file>img/D05_front.png</file>
+	<file>img/D06_front.png</file>
+	<file>img/D07_front.png</file>
+	<file>img/D08_front.png</file>
+	<file>img/D09_front.png</file>
+	<file>img/D10_front.png</file>
+	<file>img/D11_front.png</file>
+	<file>img/D12_front.png</file>
+	<file>img/D13_front.png</file>
+	<file>img/S01_front.png</file>
+	<file>img/S02_front.png</file>
+	<file>img/S03_front.png</file>
+	<file>img/S04_front.png</file>
+	<file>img/S05_front.png</file>
+	<file>img/S06_front.png</file>
+	<file>img/S07_front.png</file>
+	<file>img/S08_front.png</file>
+	<file>img/S09_front.png</file>
+	<file>img/S10_front.png</file>
+	<file>img/S11_front.png</file>
+	<file>img/S12_front.png</file>
+	<file>img/S13_front.png</file>
+	<file>img/O00_front.png</file>
 	
 </qresource>
 </RCC>

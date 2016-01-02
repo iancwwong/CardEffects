@@ -113,8 +113,47 @@ compiler_rcc_make_all: release/qrc_CardEffects.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) release/qrc_CardEffects.cpp
 release/qrc_CardEffects.cpp: ../CardEffects/CardEffects.qrc \
-		../CardEffects/img/H01_front.png \
+		../CardEffects/img/H04_front.png \
+		../CardEffects/img/S05_front.png \
 		../CardEffects/img/default_back.png \
+		../CardEffects/img/D02_front.png \
+		../CardEffects/img/H01_front.png \
+		../CardEffects/img/S02_front.png \
+		../CardEffects/img/O00_front.png \
+		../CardEffects/img/D13_front.png \
+		../CardEffects/img/H13_front.png \
+		../CardEffects/img/H09_front.png \
+		../CardEffects/img/D07_front.png \
+		../CardEffects/img/H12_front.png \
+		../CardEffects/img/D10_front.png \
+		../CardEffects/img/S13_front.png \
+		../CardEffects/img/H06_front.png \
+		../CardEffects/img/S11_front.png \
+		../CardEffects/img/D04_front.png \
+		../CardEffects/img/S07_front.png \
+		../CardEffects/img/H05_front.png \
+		../CardEffects/img/S10_front.png \
+		../CardEffects/img/D03_front.png \
+		../CardEffects/img/H03_front.png \
+		../CardEffects/img/S04_front.png \
+		../CardEffects/img/D01_front.png \
+		../CardEffects/img/H02_front.png \
+		../CardEffects/img/S03_front.png \
+		../CardEffects/img/S01_front.png \
+		../CardEffects/img/D09_front.png \
+		../CardEffects/img/D12_front.png \
+		../CardEffects/img/D08_front.png \
+		../CardEffects/img/D11_front.png \
+		../CardEffects/img/H08_front.png \
+		../CardEffects/img/S09_front.png \
+		../CardEffects/img/D06_front.png \
+		../CardEffects/img/H11_front.png \
+		../CardEffects/img/H07_front.png \
+		../CardEffects/img/S12_front.png \
+		../CardEffects/img/D05_front.png \
+		../CardEffects/img/S08_front.png \
+		../CardEffects/img/H10_front.png \
+		../CardEffects/img/S06_front.png \
 		../CardEffects/profiles/H09.descr \
 		../CardEffects/profiles/S10.descr \
 		../CardEffects/profiles/D08.descr \
