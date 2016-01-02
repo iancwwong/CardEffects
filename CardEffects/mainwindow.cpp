@@ -16,6 +16,12 @@ MainWindow::MainWindow(QWidget *parent) :
     // Customise the select card dropdown list
     ui->CardSelectBar->setMaxVisibleItems((int)NUM_CARDS/2 + 1);       // add the joker
     addCardSelectionItems(ui->CardSelectBar);
+
+    // Set default card picture (blank) in the QLabel
+    QPixmap * cardImg = new QPixmap(":/img/default_back.png");
+    ui->CardDisplayBox->setPixmap(*cardImg);
+    delete cardImg;
+
 }
 
 MainWindow::~MainWindow()
@@ -33,6 +39,12 @@ void MainWindow::on_CardSelectBar_activated(const QString &arg1)
 
         // Clear the effect description box
         ui->CardDescriptionBox->setText("");
+
+        // Display default blank card as the card display
+        QPixmap * cardImg = new QPixmap(":/img/default_back.png");
+        ui->CardDisplayBox->setPixmap(*cardImg);
+        delete cardImg;
+
     } else {
 
         // Translate the card name into its code name
@@ -69,6 +81,14 @@ void MainWindow::on_CardSelectBar_activated(const QString &arg1)
 
         }
         ui->CardDescriptionBox->setText(cardDescription);
+
+        // Display the face image of the card selected
+        QString imgfilename = ":/img/";
+        imgfilename.append(codeName);
+        imgfilename.append("_front.png");
+        QPixmap * cardImg = new QPixmap(":/img/H01_front.png");
+        ui->CardDisplayBox->setPixmap(*cardImg);
+        delete cardImg;
     }
 }
 

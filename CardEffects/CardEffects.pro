@@ -20,3 +20,5 @@ HEADERS  += mainwindow.h
 FORMS    += mainwindow.ui
 
 RC_FILE = CardEffects.rc
+
+RESOURCES = CardEffects.qrc

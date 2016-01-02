@@ -6,6 +6,8 @@
 // ==   UI ELEMENTS     ==
 #include <QMessageBox>
 #include <QComboBox>
+#include <QPixmap>
+#include <QLabel>
 
 // ==   DATA REPRESENTATION     ==
 #include <QVector>

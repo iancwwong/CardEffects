@@ -46,6 +46,9 @@ public:
     QSpacerItem *horizontalSpacer;
     QComboBox *CardSelectBar;
     QSpacerItem *horizontalSpacer_2;
+    QWidget *verticalLayoutWidget_2;
+    QVBoxLayout *verticalLayout_2;
+    QLabel *CardDisplayBox;
     QMenuBar *menuBar;
     QMenu *menuAbout;
     QMenu *menuFile;
@@ -113,6 +116,24 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_2);
 
+        verticalLayoutWidget_2 = new QWidget(frame);
+        verticalLayoutWidget_2->setObjectName(QStringLiteral("verticalLayoutWidget_2"));
+        verticalLayoutWidget_2->setGeometry(QRect(310, 60, 171, 221));
+        verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget_2);
+        verticalLayout_2->setSpacing(6);
+        verticalLayout_2->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        verticalLayout_2->setSizeConstraint(QLayout::SetFixedSize);
+        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
+        CardDisplayBox = new QLabel(verticalLayoutWidget_2);
+        CardDisplayBox->setObjectName(QStringLiteral("CardDisplayBox"));
+        sizePolicy.setHeightForWidth(CardDisplayBox->sizePolicy().hasHeightForWidth());
+        CardDisplayBox->setSizePolicy(sizePolicy);
+        CardDisplayBox->setMinimumSize(QSize(150, 210));
+        CardDisplayBox->setMaximumSize(QSize(150, 210));
+
+        verticalLayout_2->addWidget(CardDisplayBox, 0, Qt::AlignHCenter|Qt::AlignVCenter);
+
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -150,6 +171,7 @@ public:
         CardSelectBar->insertItems(0, QStringList()
          << QApplication::translate("MainWindow", "Select a card", 0)
         );
+        CardDisplayBox->setText(QString());
         menuAbout->setTitle(QApplication::translate("MainWindow", "Help", 0));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", 0));
     } // retranslateUi
