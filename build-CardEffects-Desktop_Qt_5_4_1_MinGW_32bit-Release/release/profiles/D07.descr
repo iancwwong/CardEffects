@@ -1,8 +1,0 @@
-#name
-Diamonds: 7
-#suit
-D
-#value
-7
-#effect
-Face-up: Summon another DIAMOND card with value <= 4 from deck or hand.

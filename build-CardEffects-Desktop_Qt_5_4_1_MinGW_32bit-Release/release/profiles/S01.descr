@@ -1,8 +1,0 @@
-#name
-Spades: Ace
-#suit
-S
-#value
-1
-#effect
-Discard: Increase the power level of a SPADE card to the highest power level on the opponent's battlefield until the end phase. At the end phase, draw one card.

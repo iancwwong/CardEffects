@@ -1,8 +1,0 @@
-#name
-Hearts: 10
-#suit
-H
-#value
-10
-#effect
-Face-up: Summon a card with value <= 6 from your hand.
