@@ -4,13 +4,11 @@
 // Constructor
 CommandParser::CommandParser()
 {
-
 }
 
 // Destructor
 CommandParser::~CommandParser()
 {
-
 }
 
 // ---------------------

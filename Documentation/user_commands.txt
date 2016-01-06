@@ -1,0 +1,35 @@
+== USER COMMANDS THAT CAN BE ENTERED
+
+Note: The correct format MUST be used (ie the key word must be typed out EXACTLY). 
+      Words in () brackets are variable. 
+      Words in [] brackets are optional.
+      
+      Variable words will be checked for their validity.
+
+===========
+   summon
+===========
+Probably the most important command keyword. You use this to summon a card from your hand to the battlefield (a NORMAL summon). 
+
+Usage:	"summon (cardname) [position]"
+where
+	* cardname: a valid cardname with 1 character for suit, and 1 character for value. eg 5 of Hearts = H5
+	* position: the position where you wanna summon the card on your battlefield. It is a number from 1-5.
+
+= activate
+	"activate (cardname)"
+
+= view
+	"view (location)"
+
+= battle
+	"battle (mycard) (opponentcard)"
+
+= goto 
+	"goto (phasename)"
+
+= info 
+	"info (gameinfo)"
+
+
+

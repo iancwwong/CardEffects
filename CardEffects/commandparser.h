@@ -1,9 +1,9 @@
 /*
- * This class is responsible for decrypting the meaning of user-entered commands
- * and if a valid command, pass as a "GameAction" to the "GameEngine" class.
- * Finally, returns a result string to the UI.
+ * This class is responsible for checking the validity of user-entered commands
+ * and if a valid command, pass as an "Action" to the "GameEngine" class.
+ * Then returns a result string to the UI.
  *
- * If a command is invalid, then it will return an error message back to the user.
+ * If a command is invalid, then it will return an error message to the UI instead.
  *
 */
 
