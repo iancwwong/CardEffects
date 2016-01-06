@@ -13,6 +13,18 @@ MainWindow::MainWindow(QWidget *parent) :
     this->cardNameMap = new QMap<QString, QString>();
     initialiseCardNameMapping(this->cardNameMap);
 
+    // Create a command parser
+    this->commandParser = new CommandParser();
+
+    // DEBUGGING
+    // Create a new game engine, and attack to command parser
+    this->gameEngine = new GameEngine();
+    this->commandParser->SetGameEngine(this->gameEngine);
+
+
+    // Initialise game ui components
+    ui->CommandEntryBox->setPlaceholderText("Enter command");
+
     // Customise the select card dropdown list
     ui->CardSelectBar->setMaxVisibleItems((int)NUM_CARDS/2 + 1);       // add the joker
     addCardSelectionItems(ui->CardSelectBar);
@@ -32,6 +44,21 @@ MainWindow::~MainWindow()
 }
 
 // ==   INTERFACE ACTIONS   ==
+
+// Action when user enters a command
+void MainWindow::on_CommandEntryBox_returnPressed()
+{
+    // Extract string, and reset command entry box
+    QString userCommand = ui->CommandEntryBox->text();
+    ui->CommandEntryBox->setText("");
+    ui->CommandEntryBox->setPlaceholderText("Enter command");
+
+    // Parse the command
+    QString commandResult = this->commandParser->ParseCommand(userCommand);
+
+    cout << commandResult.toStdString() << endl;
+
+}
 
 // Action when user selects a card
 void MainWindow::on_CardSelectBar_activated(const QString &arg1)

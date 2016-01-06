@@ -13,9 +13,15 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    gameengine.cpp \
+    commandparser.cpp \
+    action.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    gameengine.h \
+    commandparser.h \
+    action.h
 
 FORMS    += mainwindow.ui
 

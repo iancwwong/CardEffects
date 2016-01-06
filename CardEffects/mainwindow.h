@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+// ==   OTHER CLASSES   ==
+#include <gameengine.h>
+#include <commandparser.h>
 
 // ==   UI ELEMENTS     ==
 #include <QMessageBox>
@@ -37,12 +40,29 @@ public:
 // Actions
 private slots:
 
+    // ------------------------------------
+    // GAME WINDOW UI
+    // ------------------------------------
+
+    // Entry of command in command box
+    void on_CommandEntryBox_returnPressed();
+
+    // ------------------------------------
+    // CARD VIEWER UI
+    // ------------------------------------
+
     // Card Select Combo Box
     void on_CardSelectBar_activated(const QString &arg1);
+
+    // ------------------------------------
+    // MENU BAR
+    // ------------------------------------
 
     // Menu Bar
     void on_actionAbout_triggered();
     void on_actionExit_triggered();
+
+
 
 
 private:
@@ -50,6 +70,8 @@ private:
     //  ==  ATTRIBUTES          ==
     Ui::MainWindow *ui;
     const int NUM_CARDS = 52;
+    GameEngine * gameEngine;
+    CommandParser * commandParser;
 
     // ==   PRIVATE FUNCTIONS   ==
 
