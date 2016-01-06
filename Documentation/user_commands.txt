@@ -1,35 +1,71 @@
-== USER COMMANDS THAT CAN BE ENTERED
+////////////////////////////////////////////////////////////////////
+/					 			   /
+/		USER COMMANDS THAT CAN BE ENTERED		   /
+/								   /
+////////////////////////////////////////////////////////////////////
 
-Note: The correct format MUST be used (ie the key word must be typed out EXACTLY). 
-      Words in () brackets are variable. 
+Note: The correct format MUST be used (ie the words must be typed out EXACTLY). 
+      Words in () brackets are variable (the possible words are listed below the usage, which must also be typed out exactly). 
       Words in [] brackets are optional.
-      
-      Variable words will be checked for their validity.
 
 ===========
-   summon
+ summon
 ===========
-Probably the most important command keyword. You use this to summon a card from your hand to the battlefield (a NORMAL summon). 
+A vital command keyword. Use this command to summon a card from your hand to the battlefield (a NORMAL summon). 
 
 Usage:	"summon (cardname) [position]"
 where
 	* cardname: a valid cardname with 1 character for suit, and 1 character for value. eg 5 of Hearts = H5
 	* position: the position where you wanna summon the card on your battlefield. It is a number from 1-5.
 
-= activate
-	"activate (cardname)"
+===========
+ activate
+===========
+The second most important command keyword. Use this command to activate a card (the location of the card will be determined automatically).
 
-= view
-	"view (location)"
+Usage:	"activate (cardname)"
+where
+	* cardname: a valid cardname with 1 character for suit, and 1 character for value. eg 5 of Hearts = H5
 
-= battle
-	"battle (mycard) (opponentcard)"
+===========
+ attack
+===========
+The MOST important keyword, as this is how you win the game. Use this command to attack an opponent with a card.
 
-= goto 
-	"goto (phasename)"
+Usage:	"attack (mycard) (opponentcard)"
+where
+	* cardname: a valid cardname with 1 character for suit, and 1 character for value. eg 5 of Hearts = H5
+	* opponentcard: EITHER 
+				- a valid cardname
+			or	- shield
+			or	- direct
 
-= info 
-	"info (gameinfo)"
+===========
+ goto
+=========== 
+Use this command to go to a phase in your turn.
+
+Usage:	"goto (phasename)"
+where
+	* phasename: mp1, bp, mp2, end
+
+===========
+ view
+===========
+Use this command to view a particular area of the playing area.
+
+Usage:	"view (location)"
+where
+	* location:  hand, grave, battlefield, shields
+
+===========
+ info
+===========
+Use this command to view information about the current game.
+
+Usage:	"info (gameinfo)"
+where
+	* gameinfo: phase
 
 
 
