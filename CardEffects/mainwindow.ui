@@ -244,7 +244,7 @@
     <property name="title">
      <string>File</string>
     </property>
-    <addaction name="actionOpen_Card_Viewer"/>
+    <addaction name="actionNew_Game"/>
     <addaction name="separator"/>
     <addaction name="actionExit"/>
    </widget>
@@ -270,9 +270,9 @@
     <string>Exit</string>
    </property>
   </action>
-  <action name="actionOpen_Card_Viewer">
+  <action name="actionNew_Game">
    <property name="text">
-    <string>Open Card Viewer</string>
+    <string>New Game</string>
    </property>
   </action>
  </widget>

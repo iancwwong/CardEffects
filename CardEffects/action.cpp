@@ -20,7 +20,7 @@ Action::~Action() {}
 // METHODS
 // -------------------
 
-// returns the original string command
+// returns  the original string command
 QString Action::GetStringCommand() {
     return stringCommand;
 }

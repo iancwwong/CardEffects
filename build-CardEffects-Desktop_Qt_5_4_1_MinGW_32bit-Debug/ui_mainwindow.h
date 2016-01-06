@@ -38,7 +38,7 @@ class Ui_MainWindow
 public:
     QAction *actionAbout;
     QAction *actionExit;
-    QAction *actionOpen_Card_Viewer;
+    QAction *actionNew_Game;
     QWidget *centralWidget;
     QFrame *frame;
     QWidget *verticalLayoutWidget_3;
@@ -77,8 +77,8 @@ public:
         actionAbout->setObjectName(QStringLiteral("actionAbout"));
         actionExit = new QAction(MainWindow);
         actionExit->setObjectName(QStringLiteral("actionExit"));
-        actionOpen_Card_Viewer = new QAction(MainWindow);
-        actionOpen_Card_Viewer->setObjectName(QStringLiteral("actionOpen_Card_Viewer"));
+        actionNew_Game = new QAction(MainWindow);
+        actionNew_Game->setObjectName(QStringLiteral("actionNew_Game"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         frame = new QFrame(centralWidget);
@@ -205,7 +205,7 @@ public:
         menuBar->addAction(menuFile->menuAction());
         menuBar->addAction(menuAbout->menuAction());
         menuAbout->addAction(actionAbout);
-        menuFile->addAction(actionOpen_Card_Viewer);
+        menuFile->addAction(actionNew_Game);
         menuFile->addSeparator();
         menuFile->addAction(actionExit);
 
@@ -219,7 +219,7 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
         actionAbout->setText(QApplication::translate("MainWindow", "About", 0));
         actionExit->setText(QApplication::translate("MainWindow", "Exit", 0));
-        actionOpen_Card_Viewer->setText(QApplication::translate("MainWindow", "Open Card Viewer", 0));
+        actionNew_Game->setText(QApplication::translate("MainWindow", "New Game", 0));
         CardDisplayBox->setText(QString());
         CardSelectBar->clear();
         CardSelectBar->insertItems(0, QStringList()

@@ -16,12 +16,6 @@ MainWindow::MainWindow(QWidget *parent) :
     // Create a command parser
     this->commandParser = new CommandParser();
 
-    // DEBUGGING
-    // Create a new game engine, and attack to command parser
-    this->gameEngine = new GameEngine();
-    this->commandParser->SetGameEngine(this->gameEngine);
-
-
     // Initialise game ui components
     ui->CommandEntryBox->setPlaceholderText("Enter command");
 
@@ -139,6 +133,13 @@ void MainWindow::on_actionAbout_triggered()
     QMessageBox aboutBox;
     aboutBox.setText("Card Viewer app for the Card Effects Game.");
     aboutBox.exec();
+}
+
+void MainWindow::on_actionNew_Game_triggered()
+{
+    // Create a new game engine, and attach to command parser
+    this->gameEngine = new GameEngine();
+    this->commandParser->SetGameEngine(this->gameEngine);
 }
 
 // ==   PRIVATE FUNCTIONS   ==

@@ -61,9 +61,7 @@ private slots:
     // Menu Bar
     void on_actionAbout_triggered();
     void on_actionExit_triggered();
-
-
-
+    void on_actionNew_Game_triggered();
 
 private:
 

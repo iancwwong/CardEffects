@@ -25,6 +25,11 @@ void CommandParser::SetGameEngine(GameEngine * newGameEngine) {
 // Decrypt the meaning of a user-entered command
 QString CommandParser::ParseCommand(QString command) {
 
+    // Check if there is an existing game
+    if (gameEngine == 0) {      //null gameEngine
+        return QString("Command not accepted: Please start a new game.");
+    }
+
     // final return string containing the result
     QString resultString;
 
