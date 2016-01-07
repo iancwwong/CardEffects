@@ -20,6 +20,10 @@
 #include <QTextStream>
 #include <iostream> // debugging
 
+// ==   CONSTANTS       ==
+#define BLUE 0
+#define RED 1
+
 using namespace std;
 
 namespace Ui {
@@ -67,9 +71,11 @@ private:
 
     //  ==  ATTRIBUTES          ==
     Ui::MainWindow *ui;
-    const int NUM_CARDS = 52;
     GameEngine * gameEngine;
     CommandParser * commandParser;
+
+    //  == CONSTANTS            ==
+    const int NUM_CARDS = 52;
 
     // ==   PRIVATE FUNCTIONS   ==
 
@@ -81,6 +87,9 @@ private:
 
     // translate a card's text name to its code name
     QString toCodeName(QString cardTextName);
+
+    // Display the string inside the action log box
+    void DisplayString(QString stringToDisplay, int color);
 };
 
 #endif // MAINWINDOW_H

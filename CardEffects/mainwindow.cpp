@@ -30,6 +30,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->CardDisplayBox->setPixmap(*cardImg);
     delete cardImg;
 
+    // DEBUGGING
+    for (int i = 0; i < 100; i++) {
+        DisplayString(QString::number(i), BLUE);
+    }
+
+
 }
 
 MainWindow::~MainWindow()
@@ -272,5 +278,9 @@ QString MainWindow::toCodeName(QString cardTextName) {
     QString result = this->cardNameMap->value(cardTextName);
     return result;
 
+}
+
+void MainWindow::DisplayString(QString stringToDisplay, int color) {
+    ui->ActionLogBox->append(stringToDisplay);
 }
 

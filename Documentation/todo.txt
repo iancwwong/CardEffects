@@ -1,1 +1,7 @@
-== Iffy effects
+== Designing
+
+* Have a "gameLossType" variable in GameState, as a player can also lose the game when their deck is empty in the draw phase.
+
+== Coding
+
+* Make all functions start with a capital, and attributes start with lower case
