@@ -31,8 +31,12 @@ MainWindow::MainWindow(QWidget *parent) :
     delete cardImg;
 
     // DEBUGGING
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 50; i++) {
         DisplayString(QString::number(i), BLUE);
+    }
+
+    for (int i = 50; i < 100; i++) {
+        DisplayString(QString::number(i), RED);
     }
 
 
@@ -281,6 +285,21 @@ QString MainWindow::toCodeName(QString cardTextName) {
 }
 
 void MainWindow::DisplayString(QString stringToDisplay, int color) {
+    QColor * userColor;
+    switch (color) {
+        case BLUE:
+            userColor = new QColor(QString("blue"));
+            break;
+
+        case RED:
+            userColor = new QColor(QString("red"));
+            break;
+
+        default:
+            userColor = new QColor(QString("blue"));
+            break;
+    }
+    ui->ActionLogBox->setTextColor(*userColor);
     ui->ActionLogBox->append(stringToDisplay);
 }
 

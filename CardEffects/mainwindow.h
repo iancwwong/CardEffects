@@ -11,6 +11,7 @@
 #include <QComboBox>
 #include <QPixmap>
 #include <QLabel>
+#include <QColor>
 
 // ==   DATA REPRESENTATION     ==
 #include <QVector>
