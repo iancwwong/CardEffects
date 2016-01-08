@@ -284,7 +284,11 @@ QString MainWindow::toCodeName(QString cardTextName) {
 
 }
 
+
+// Displays a specified string with a specified color in ui->ActionLogBox
 void MainWindow::DisplayString(QString stringToDisplay, int color) {
+
+    // Determine and set the color
     QColor * userColor;
     switch (color) {
         case BLUE:
@@ -300,6 +304,8 @@ void MainWindow::DisplayString(QString stringToDisplay, int color) {
             break;
     }
     ui->ActionLogBox->setTextColor(*userColor);
+
+    // Display the string
     ui->ActionLogBox->append(stringToDisplay);
 }
 

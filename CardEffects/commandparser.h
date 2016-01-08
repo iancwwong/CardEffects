@@ -10,7 +10,9 @@
 #ifndef COMMANDPARSER_H
 #define COMMANDPARSER_H
 
+// DATA RESPRESENTATION
 #include <QString>
+#include <QStringList>
 
 #include <gameengine.h>
 #include <action.h>
@@ -35,6 +37,14 @@ public:
 
 private:
     GameEngine * gameEngine;
+    QStringList * commandList;
+
+    // ---------------------
+    // FUNCTIONS
+    // ---------------------
+
+    bool CheckCommand(QString command);
+    bool CheckParameters(QStringList commandComponents);
 
 };
 

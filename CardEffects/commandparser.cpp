@@ -4,6 +4,14 @@
 // Constructor
 CommandParser::CommandParser()
 {
+    // Set up the list of valid commands
+    this->commandList = new QStringList();
+    this->commandList->append("summon");
+    this->commandList->append("activate");
+    this->commandList->append("attack");
+    this->commandList->append("goto");
+    this->commandList->append("view");
+    this->commandList->append("info");
 }
 
 // Destructor
@@ -28,24 +36,53 @@ QString CommandParser::ParseCommand(QString command) {
         return QString("Command not accepted: Please start a new game.");
     }
 
-    // final return string containing the result
-    QString resultString;
+    // Break down the command into its components, and check (in succession) their validity
+    QStringList commandComponents = command.split(QChar(' '));
 
-    // Parse the command and test its validity
-    bool commandValid = true;
+    // Check the command
+    QString commandString = commandComponents.first();
+    if (CheckCommand(commandString)) {
 
-    // Determine whether to pass as an action
-    if (commandValid) {
-        // Create the action
-        Action * action = new Action(command);
+        // Check the parameters
+        if (CheckParameters(commandComponents)) {
 
-        // Execute action using GameEngine
-        resultString = gameEngine->ExecuteAction(action);
+            // Command is valid - create the action, and
+            // return the result from GameEngine
+            Action * action = new Action(command);
 
+            // ToDo: Fill out the appropriate fields in the Action object
+
+            return gameEngine->ExecuteAction(action);
+        }
     } else {
-        resultString = "Invalid command. Please try again.";
+
+        // Invalid command: return error string
+        // Todo: Suggest a correction to the command
+        QString resultString;
+        resultString.append("Error: The command '");
+        resultString.append(commandComponents.first());
+        resultString.append("' is not found. Check for any spelling errors.");
+        return resultString;
     }
 
-    return resultString;
+}
+
+// ------------------
+// PRIVATE FUNCTIONS
+// ------------------
+
+// Checks whether the input command is a valid command
+bool CommandParser::CheckCommand(QString command) {
+    return this->commandList->contains(command,Qt::CaseInsensitive);
+}
+
+// Checks whether the given parameters to a command (all stored in a QStringList) are valid
+bool CommandParser::CheckParameters(QStringList commandComponents) {
+    QString command = commandComponents.first();
+
+    // Todo: Determine what type of parameters are associated with the command
+
+    return true;
+
 }
 
