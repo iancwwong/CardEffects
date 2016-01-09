@@ -11,9 +11,6 @@ public:
     // Default
     Action();
 
-    // When given a string as the command
-    Action(QString command);
-
     // DESTRUCTOR
     ~Action();
 
@@ -23,6 +20,7 @@ public:
 
     // Return the original string command
     QString GetStringCommand();
+    void SetStringCommand(QString commandStr);
 
 private:
 

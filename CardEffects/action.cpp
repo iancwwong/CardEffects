@@ -9,11 +9,6 @@ Action::Action()
 {
 }
 
-// Constructor when given a string as the command
-Action::Action(QString command) {
-    stringCommand = command;
-}
-
 Action::~Action() {}
 
 // -------------------
@@ -23,5 +18,9 @@ Action::~Action() {}
 // returns  the original string command
 QString Action::GetStringCommand() {
     return stringCommand;
+}
+
+void Action::SetStringCommand(QString commandStr) {
+    this->stringCommand = commandStr;
 }
 
