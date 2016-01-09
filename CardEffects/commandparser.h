@@ -42,6 +42,13 @@ private:
     GameEngine * gameEngine;
     QMap<QString, QList<QRegExp> > * commandFormatMap;   // maps a command name to parameters and their format
 
+    // ---------------------
+    // CONSTANTS
+    // ---------------------
+
+    // When all parameters are valid
+    const int ALL_PARAMETERS_VALID = -1;
+
     // Regex's for checking parameters
     // NOTE: Lower case as the original command string is translated to lower case
     const QString VALID_CARD_REGEX = "^[hdsc]([1-9]0?|[jqk])$";
@@ -57,8 +64,16 @@ private:
     // Returns whether the command exists
     bool CheckCommand(QString command);
 
-    // Returns whether the parameters are correct
-    bool CheckParameters(QString command, QStringList parameters);
+    // Returns the first parameter that is incorrect
+    int CheckParameters(QString command, QStringList parameters);
+
+    // ERROR BUILDING FUNCTIONS
+    // For command
+    QString BuildCommandErrorString(QString command);
+
+    // For parameters
+    QString BuildParameterErrorString(int parameterPosition, QString parameterValue);
+    QString BuildNoParameterErrorString(QString command);
 
 };
 

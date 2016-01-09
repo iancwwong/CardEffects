@@ -45,12 +45,12 @@ QString CommandParser::ParseCommand(QString command) {
 
         // case when no parameters are supplied to a command that accepts parameters
         if (commandComponents.size() == 0 &&  this->commandFormatMap->value(commandString).size() != 0) {
-            QString resultString;
-            resultString += "Error: No parameters given for the command '" + commandString + "'.";
-            return resultString;
+            return BuildNoParameterErrorString(commandString);
         }
 
-        if (CheckParameters(commandString, commandComponents)) {
+        int incorrectParameter = CheckParameters(commandString, commandComponents);
+        QVector<QString> commandComponentsVector = commandComponents.toVector();
+        if (incorrectParameter == this->ALL_PARAMETERS_VALID) {
 
             // Command is valid - create the action, and
             // return the result from GameEngine
@@ -63,21 +63,16 @@ QString CommandParser::ParseCommand(QString command) {
         } else {
 
             // At least one of the parameters are invalid
-            QString resultString;
-            resultString.append("Error: Incorrect parameter(s) for command '");
-            resultString.append(commandString);
-            resultString.append("'.");
-            return resultString;
+            // Return the appropriate error message
+            // Note: assume incorrectParameter is >= 0 at this point
+            return BuildParameterErrorString(incorrectParameter+1, commandComponentsVector[incorrectParameter]);
         }
     } else {
 
         // Invalid command: return error string
         // Todo: Suggest a correction to the command
-        QString resultString;
-        resultString.append("Error: The command '");
-        resultString.append(commandComponents.first());
-        resultString.append("' is not found. Check for any spelling errors.");
-        return resultString;
+        return BuildCommandErrorString(commandComponents.first());
+
     }
 
 }
@@ -104,7 +99,7 @@ bool CommandParser::CheckCommand(QString command) {
 }
 
 // Checks whether the given parameters to a command (all stored in a QStringList) are valid
-bool CommandParser::CheckParameters(QString command, QStringList parameters) {
+int CommandParser::CheckParameters(QString command, QStringList parameters) {
 
 
     // Todo: Determine what type of parameters are associated with the command
@@ -114,12 +109,43 @@ bool CommandParser::CheckParameters(QString command, QStringList parameters) {
     // Loop through each mapped parameter, and check the same parameter given matches the regex
     for (int i = 0; i < acceptedParameters.size(); i++) {
         if (!givenParameters[i].contains(acceptedParameters[i])) {
-            return false;
+            return i;
         }
     }
 
     // At this point, all parameters have been confirmed to match the regex corresponding to the command
-    return true;
+    return this->ALL_PARAMETERS_VALID;
 
 }
 
+// -------------------------------
+// ERROR STRING BUILDING FUNCTIONS
+// -------------------------------
+
+// Build the appropriate error string for when a command is incorrect
+QString CommandParser::BuildCommandErrorString(QString command) {
+    QString resultString;
+    resultString.append("Error: The command '");
+    resultString.append(command);
+    resultString.append("' is not found. Check for any spelling errors.");
+    return resultString;
+}
+
+// Build the appropriate error string for when a parameter is incorrect
+QString CommandParser::BuildParameterErrorString(int parameterPosition, QString parameterValue) {
+    QString resultString;
+    resultString.append("Error: Parameter ");
+    resultString.append(QString::number(parameterPosition));       // incorrectParameter is index based
+    resultString.append(" (");
+    resultString.append(parameterValue);
+    resultString.append(") is incorrect.");
+    return resultString;
+}
+
+// Build the appropriate error string for when no parameters are supplied for a command
+// that takes in at least 1 parameter
+QString CommandParser::BuildNoParameterErrorString(QString command) {
+    QString resultString;
+    resultString += "Error: No parameters given for the command '" + command + "'.";
+    return resultString;
+}
