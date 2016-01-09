@@ -48,6 +48,11 @@ QString CommandParser::ParseCommand(QString command) {
             return BuildNoParameterErrorString(commandString);
         }
 
+        // case when insufficient arguments have been supplied
+        if (commandComponents.size() != this->commandFormatMap->value(commandString).size()) {
+            return BuildInsuffParameterErrorString(commandString);
+        }
+
         int incorrectParameter = CheckParameters(commandString, commandComponents);
         QVector<QString> commandComponentsVector = commandComponents.toVector();
         if (incorrectParameter == this->ALL_PARAMETERS_VALID) {
@@ -175,6 +180,13 @@ QString CommandParser::BuildParameterErrorString(int parameterPosition, QString 
 QString CommandParser::BuildNoParameterErrorString(QString command) {
     QString resultString;
     resultString += "Error: No parameters given for the command '" + command + "'.";
+    return resultString;
+}
+
+QString CommandParser::BuildInsuffParameterErrorString(QString command) {
+    int numAcceptedParameters = this->commandFormatMap->value(command).size();
+    QString resultString = "Error: '" + command + "' takes "
+                           + QString::number(numAcceptedParameters) + " parameters.";
     return resultString;
 }
 

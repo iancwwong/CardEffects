@@ -75,6 +75,7 @@ private:
     // For parameters
     QString BuildParameterErrorString(int parameterPosition, QString parameterValue);
     QString BuildNoParameterErrorString(QString command);
+    QString BuildInsuffParameterErrorString(QString command);
 
 };
 
