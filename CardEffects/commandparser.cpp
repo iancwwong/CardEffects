@@ -129,6 +129,27 @@ void CommandParser::InitialiseCommandMapping() {
     gotoParameters->append(QRegExp(QString("^" + builtRegex + "$")));
     this->commandFormatMap->insert(gotoCommandStr, *gotoParameters);
 
+    // View command: playing area
+    QString viewCommandStr = "view";
+    QList<QRegExp> * viewParameters = new QList<QRegExp>();
+    builtRegexList = new QStringList();
+    builtRegexList->append("hand");
+    builtRegexList->append("grave");
+    builtRegexList->append("battlefield");
+    builtRegexList->append("shields");
+    builtRegex = BuildRegex(*builtRegexList);
+    viewParameters->append(QRegExp(QString("^" + builtRegex + "$")));
+    this->commandFormatMap->insert(viewCommandStr, *viewParameters);
+
+    // Info command: game attribute
+    QString infoCommandStr = "info";
+    QList<QRegExp> * infoParameters = new QList<QRegExp>();
+    builtRegexList = new QStringList();
+    builtRegexList->append("phase");
+    builtRegex = BuildRegex(*builtRegexList);
+    infoParameters->append(QRegExp(QString("^" + builtRegex + "$")));
+    this->commandFormatMap->insert(infoCommandStr, *infoParameters);
+
 }
 
 // Checks whether the input command is a valid command
