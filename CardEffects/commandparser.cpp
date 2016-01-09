@@ -117,6 +117,17 @@ void CommandParser::InitialiseCommandMapping() {
     attackParameters->append(QRegExp(QString("^" + builtRegex + "$")));
     this->commandFormatMap->insert(attackCommandStr, *attackParameters);
 
+    // Goto command: phase name
+    QString gotoCommandStr = "goto";
+    QList<QRegExp> * gotoParameters = new QList<QRegExp>();
+    builtRegexList = new QStringList();
+    builtRegexList->append("mp1");  // main phase 1
+    builtRegexList->append("bp");   // battle phase
+    builtRegexList->append("mp2");  // main phase 2
+    builtRegexList->append("end");  // end
+    builtRegex = BuildRegex(*builtRegexList);
+    gotoParameters->append(QRegExp(QString("^" + builtRegex + "$")));
+    this->commandFormatMap->insert(gotoCommandStr, *gotoParameters);
 
 }
 
@@ -129,8 +140,6 @@ bool CommandParser::CheckCommand(QString command) {
 // Checks whether the given parameters to a command (all stored in a QStringList) are valid
 int CommandParser::CheckParameters(QString command, QStringList parameters) {
 
-
-    // Todo: Determine what type of parameters are associated with the command
     QVector<QRegExp> acceptedParameters = this->commandFormatMap->value(command).toVector();
     QVector<QString> givenParameters = parameters.toVector();
 
