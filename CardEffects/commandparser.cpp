@@ -70,7 +70,7 @@ QString CommandParser::ParseCommand(QString command) {
     } else {
 
         // Invalid command: return error string
-        // Todo: Suggest a correction to the command
+        // Todo: Suggest a correction
         return BuildCommandErrorString(commandComponents.first());
 
     }
@@ -136,9 +136,9 @@ QString CommandParser::BuildParameterErrorString(int parameterPosition, QString 
     QString resultString;
     resultString.append("Error: Parameter ");
     resultString.append(QString::number(parameterPosition));       // incorrectParameter is index based
-    resultString.append(" (");
+    resultString.append(" ('");
     resultString.append(parameterValue);
-    resultString.append(") is incorrect.");
+    resultString.append("') is incorrect.");
     return resultString;
 }
 

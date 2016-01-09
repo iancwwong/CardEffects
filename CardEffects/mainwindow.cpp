@@ -30,16 +30,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->CardDisplayBox->setPixmap(*cardImg);
     delete cardImg;
 
-    // DEBUGGING
-    for (int i = 0; i < 50; i++) {
-        DisplayString(QString::number(i), BLUE);
-    }
-
-    for (int i = 50; i < 100; i++) {
-        DisplayString(QString::number(i), RED);
-    }
-
-
 }
 
 MainWindow::~MainWindow()
@@ -58,9 +48,8 @@ void MainWindow::on_CommandEntryBox_returnPressed()
     ui->CommandEntryBox->setPlaceholderText("Enter command");
 
     // Parse the command
-    QString commandResult = this->commandParser->ParseCommand(userCommand);
-
-    cout << commandResult.toStdString() << endl;
+    QString commandResult = "> " + this->commandParser->ParseCommand(userCommand);
+    DisplayString(commandResult, COLOR_BLACK);
 
 }
 
@@ -150,6 +139,10 @@ void MainWindow::on_actionNew_Game_triggered()
     // Create a new game engine, and attach to command parser
     this->gameEngine = new GameEngine();
     this->commandParser->SetGameEngine(this->gameEngine);
+
+    // Print to log box
+    QString gameStartString = "> Game started!";
+    DisplayString(gameStartString, COLOR_BLACK);
 }
 
 // ==   PRIVATE FUNCTIONS   ==
@@ -291,16 +284,16 @@ void MainWindow::DisplayString(QString stringToDisplay, int color) {
     // Determine and set the color
     QColor * userColor;
     switch (color) {
-        case BLUE:
+        case COLOR_BLUE:
             userColor = new QColor(QString("blue"));
             break;
 
-        case RED:
+        case COLOR_RED:
             userColor = new QColor(QString("red"));
             break;
 
         default:
-            userColor = new QColor(QString("blue"));
+            userColor = new QColor(QString("black"));
             break;
     }
     ui->ActionLogBox->setTextColor(*userColor);

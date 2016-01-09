@@ -21,9 +21,11 @@
 #include <QTextStream>
 #include <iostream> // debugging
 
-// ==   CONSTANTS       ==
-#define BLUE 0
-#define RED 1
+//  == CONSTANTS            ==
+#define NUM_CARDS 52
+#define COLOR_BLACK 0
+#define COLOR_BLUE 1
+#define COLOR_RED 2
 
 using namespace std;
 
@@ -74,9 +76,6 @@ private:
     Ui::MainWindow *ui;
     GameEngine * gameEngine;
     CommandParser * commandParser;
-
-    //  == CONSTANTS            ==
-    const int NUM_CARDS = 52;
 
     // ==   PRIVATE FUNCTIONS   ==
 
