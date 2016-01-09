@@ -51,8 +51,8 @@ private:
 
     // Regex's for checking parameters
     // NOTE: Lower case as the original command string is translated to lower case
-    const QString VALID_CARD_REGEX = "^[hdsc]([1-9]0?|[jqk])$";
-    const QString VALID_POSITION_REGEX = "^[1-5]$";
+    const QString VALID_CARD_REGEX = "[hdsc]([1-9]0?|[jqk])";
+    const QString VALID_POSITION_REGEX = "[1-5]";
 
     // ---------------------
     // FUNCTIONS

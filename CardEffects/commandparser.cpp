@@ -87,9 +87,17 @@ void CommandParser::InitialiseCommandMapping() {
     // Summon command: valid card name, (position)
     QString summonCommandStr = "summon";
     QList<QRegExp> * summonParameters = new QList<QRegExp>();
-    summonParameters->append(QRegExp(this->VALID_CARD_REGEX));
-    summonParameters->append(QRegExp(this->VALID_POSITION_REGEX));
+    summonParameters->append(QRegExp(QString("^" + this->VALID_CARD_REGEX + "$"))); //append the anchors to the standard defined regex
+    summonParameters->append(QRegExp(QString("^" + this->VALID_POSITION_REGEX + "$")));
     this->commandFormatMap->insert(summonCommandStr, *summonParameters);
+
+    // Activate command: valid card name
+    QString activateCommandStr = "activate";
+    QList<QRegExp> * activateParameters = new QList<QRegExp>();
+    activateParameters->append(QRegExp(QString("^" + this->VALID_CARD_REGEX + "$")));
+    this->commandFormatMap->insert(activateCommandStr, *activateParameters);
+
+
 }
 
 // Checks whether the input command is a valid command
@@ -107,7 +115,7 @@ int CommandParser::CheckParameters(QString command, QStringList parameters) {
     QVector<QString> givenParameters = parameters.toVector();
 
     // Loop through each mapped parameter, and check the same parameter given matches the regex
-    for (int i = 0; i < acceptedParameters.size(); i++) {
+    for (int i = 0; i < givenParameters.size(); i++) {
         if (!givenParameters[i].contains(acceptedParameters[i])) {
             return i;
         }
