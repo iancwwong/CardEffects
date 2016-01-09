@@ -66,6 +66,7 @@ private:
 
     // Returns the first parameter that is incorrect
     int CheckParameters(QString command, QStringList parameters);
+    QString BuildRegex(QStringList stringList);
 
     // ERROR BUILDING FUNCTIONS
     // For command
