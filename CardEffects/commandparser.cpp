@@ -238,7 +238,6 @@ QString CommandParser::BuildRegex(QStringList stringList) {
 
         // Append the '|' ONLY if current string is not the last
         if (i < stringVector.size() - 1) {
-
             tempRegex.append("|");
         }
 

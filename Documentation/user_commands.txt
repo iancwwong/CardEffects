@@ -13,10 +13,9 @@ Note: The correct format MUST be used (ie the words must be typed out EXACTLY).
 ===========
 A vital command keyword. Use this command to summon a card from your hand to the battlefield (a NORMAL summon). 
 
-Usage:	"summon (cardname) [position]"
+Usage:	"summon (cardname)"
 where
 	* cardname: a valid cardname with 1 character for suit, and 1 character for value. eg 5 of Hearts = H5
-	* position: the position where you wanna summon the card on your battlefield. It is a number from 1-5.
 
 ===========
  activate
