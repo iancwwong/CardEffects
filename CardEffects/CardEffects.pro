@@ -17,13 +17,15 @@ SOURCES += main.cpp\
     gameengine.cpp \
     commandparser.cpp \
     action.cpp \
-    cardobj.cpp
+    cardobj.cpp \
+    player.cpp
 
 HEADERS  += mainwindow.h \
     gameengine.h \
     commandparser.h \
     action.h \
-    cardobj.h
+    cardobj.h \
+    player.h
 
 FORMS    += mainwindow.ui
 
