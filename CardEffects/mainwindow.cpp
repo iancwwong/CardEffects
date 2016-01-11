@@ -149,7 +149,7 @@ void MainWindow::on_actionNew_Game_triggered()
 
 // Populate a combobox with all 52 playing cards and Joker
 // NOTE: Does NOT make use of the keys in the map, as order of items in the
-//       combobox is important
+//       combobox is important (ie should NOT be in alphabetical)
 void MainWindow::addCardSelectionItems(QComboBox * comboBox) {
 
     // Create the list of cards into a list
