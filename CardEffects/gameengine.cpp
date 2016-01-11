@@ -2,15 +2,11 @@
 
 // Constructor
 GameEngine::GameEngine()
-{
-
-}
+{}
 
 // Destructor
 GameEngine::~GameEngine()
-{
-
-}
+{}
 
 // ---------------------------
 // METHODS
