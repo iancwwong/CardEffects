@@ -16,7 +16,8 @@ CardObj::CardObj(QString cname, QString strname, QChar s, int cvalue, int plevel
 }
 
 CardObj::~CardObj()
-{}
+{
+}
 
 // --------------------------
 // METHODS

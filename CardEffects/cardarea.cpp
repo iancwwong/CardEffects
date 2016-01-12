@@ -14,10 +14,6 @@ CardArea::CardArea(QString area, QString player, QVector<CardObj> cardList, bool
 CardArea::~CardArea()
 {
     delete cards;
-    delete areaName;
-    delete playerName;
-    delete visibleToPlayer;
-    delete visibleToOpponent;
 }
 
 // ----------------------
