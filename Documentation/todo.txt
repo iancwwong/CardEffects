@@ -8,5 +8,3 @@
 	eg summon h2 1
 		     ^
   (Currently num given parameters = mapped parameters, ie either complete match or not match)
-
-* Make all functions start with a capital, and attributes start with lower case

@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     action.cpp \
     cardobj.cpp \
     player.cpp \
-    cardarea.cpp
+    cardarea.cpp \
+    gameobject.cpp
 
 HEADERS  += mainwindow.h \
     gameengine.h \
@@ -27,7 +28,8 @@ HEADERS  += mainwindow.h \
     action.h \
     cardobj.h \
     player.h \
-    cardarea.h
+    cardarea.h \
+    gameobject.h
 
 FORMS    += mainwindow.ui
 

@@ -7,8 +7,9 @@
 Player::Player()
 {}
 
-Player::Player(QString newPlayerName) {
+Player::Player(QString newPlayerName, int newId) {
     playerName = newPlayerName;
+    id = newId;
 }
 
 Player::~Player()
@@ -20,6 +21,10 @@ Player::~Player()
 
 QString Player::GetPlayerName() {
     return playerName;
+}
+
+int Player::GetPlayerId() {
+    return id;
 }
 
 void Player::SetPlayerName(QString newPlayerName) {

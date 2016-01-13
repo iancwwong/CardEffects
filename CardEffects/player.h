@@ -7,7 +7,7 @@ class Player
 {
 public:
     Player();
-    Player(QString newPlayerName);
+    Player(QString newPlayerName, int newId);
     ~Player();
 
     // ---------------------
@@ -15,10 +15,12 @@ public:
     // ---------------------
 
     QString GetPlayerName();
+    int GetPlayerId();
     void SetPlayerName(QString newPlayerName);
 
 private:
     QString playerName;
+    int id;
 };
 
 #endif // PLAYER_H

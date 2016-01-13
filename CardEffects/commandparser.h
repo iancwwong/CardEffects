@@ -17,7 +17,7 @@
 #include <QRegExp>
 #include <QVector>
 
-#include <gameengine.h>
+#include <gameobject.h>
 #include <action.h>
 
 class CommandParser
@@ -33,13 +33,13 @@ public:
     // ---------------------
 
     // Attach a GameEngine
-    void SetGameEngine(GameEngine * newGameEngine);
+    void SetGameObject(GameObject * newGameObject);
 
     // Decrypt the meaning of a user-entered command
     QString ParseCommand(QString command);
 
 private:
-    GameEngine * gameEngine;
+    GameObject * gameObject;
     QMap<QString, QList<QRegExp> > * commandFormatMap;   // maps a command name to parameters and their format
 
     // ---------------------
