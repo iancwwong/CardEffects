@@ -7,7 +7,7 @@
 #include <QString>
 #include <QVector>
 #include <cardobj.h>
-#include <random>
+//#include <random>
 
 using namespace std;
 

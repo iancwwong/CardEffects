@@ -2,8 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+
 // ==   OTHER CLASSES   ==
-#include <gameengine.h>
+#include <gameobject.h>
 #include <commandparser.h>
 
 // ==   UI ELEMENTS     ==
@@ -74,7 +75,7 @@ private:
 
     //  ==  ATTRIBUTES          ==
     Ui::MainWindow *ui;
-    GameEngine * gameEngine;
+    GameObject * gameObject;
     CommandParser * commandParser;
 
     // ==   PRIVATE FUNCTIONS   ==

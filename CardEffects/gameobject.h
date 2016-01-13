@@ -9,6 +9,7 @@
 #include <cardarea.h>
 #include <player.h>
 #include <gameengine.h>
+#include <action.h>
 // #include <gamestate.h>
 
 class GameObject
@@ -17,6 +18,13 @@ class GameObject
 public:
     GameObject();
     ~GameObject();
+
+    // -------------------
+    // METHODS
+    // -------------------
+
+    // Execute an action
+    QString ExecuteAction(Action gameAction);
 
 private:
 

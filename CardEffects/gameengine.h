@@ -24,7 +24,7 @@ public:
     // ---------------------------
     // METHODS
     // ---------------------------
-    QString ExecuteAction(Action *action);
+    QString ExecuteAction(Action action);
 
 private:
     // ---------------------------

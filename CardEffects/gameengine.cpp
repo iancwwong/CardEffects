@@ -13,7 +13,7 @@ GameEngine::~GameEngine()
 // ---------------------------
 
 // Execute an action
-QString GameEngine::ExecuteAction(Action *action) {
+QString GameEngine::ExecuteAction(Action action) {
 
     // Final return string
     QString resultString;
@@ -24,7 +24,7 @@ QString GameEngine::ExecuteAction(Action *action) {
 
     // DEBUGGING
     resultString.append("Successully executed command: ");
-    resultString.append(action->GetStringCommand());
+    resultString.append(action.GetStringCommand());
 
     return resultString;
 }

@@ -1,0 +1,12 @@
+INPUT(
+./debug/main.o
+./debug/mainwindow.o
+./debug/gameengine.o
+./debug/commandparser.o
+./debug/action.o
+./debug/cardobj.o
+./debug/player.o
+./debug/cardarea.o
+./debug/gameobject.o
+./debug/moc_mainwindow.o
+);

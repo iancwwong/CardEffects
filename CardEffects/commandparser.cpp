@@ -18,15 +18,15 @@ CommandParser::~CommandParser()
 // ---------------------
 
 // Attach a GameEngine
-void CommandParser::SetGameEngine(GameEngine * newGameEngine) {
-    gameEngine = newGameEngine;
+void CommandParser::SetGameObject(GameObject * newGameObject) {
+    gameObject = newGameObject;
 }
 
 // Decrypt the meaning of a user-entered command
 QString CommandParser::ParseCommand(QString command) {
 
     // Check if there is an existing game
-    if (gameEngine == 0) {      //null gameEngine
+    if (gameObject == 0) {  // null
         return QString("Command not accepted: Please start a new game.");
     }
 
@@ -64,7 +64,7 @@ QString CommandParser::ParseCommand(QString command) {
 
             // ToDo: Fill out the appropriate fields in the Action object
 
-            return gameEngine->ExecuteAction(action);
+            return gameObject->ExecuteAction(*action);
         } else {
 
             // At least one of the parameters are invalid

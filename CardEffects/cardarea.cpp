@@ -1,7 +1,10 @@
 #include "cardarea.h"
 
 CardArea::CardArea()
-{}
+{
+    QVector<CardObj> * cardVector = new QVector<CardObj>();
+    cards = *cardVector;
+}
 
 CardArea::CardArea(QString area, QString player, QVector<CardObj> cardList, bool pvisible, bool ovisible) {
     areaName = area;
@@ -13,7 +16,7 @@ CardArea::CardArea(QString area, QString player, QVector<CardObj> cardList, bool
 
 CardArea::~CardArea()
 {
-    delete cards;
+    delete &cards;
 }
 
 // ----------------------
@@ -33,7 +36,7 @@ void CardArea::ShowCards() {
 // Remove the card at a specified index
 // Assume index is in range
 CardObj CardArea::RemoveCard(int index) {
-    return cards.remove(index);
+    return cards.takeAt(index);
 }
 
 // Add a card at a specified index
@@ -52,7 +55,7 @@ void CardArea::ShuffleCards() {
     // Take a random card, and append to end of card list
     int i = cards.size();
     while (i != 0) {
-        CardObj tempCard = cards.remove(RandNum(i-1));
+        CardObj tempCard = cards.takeAt(RandNum(i-1));
         cards.append(tempCard);
         i--;
     }
@@ -63,9 +66,11 @@ void CardArea::ShuffleCards() {
 int CardArea::RandNum(int upperBound) {
 
     // Create the engine and distributor
-    default_random_engine generator;
-    uniform_int_distribution<int> distribution(0, upperBound);
+    //default_random_engine generator;
+    //uniform_int_distribution<int> distribution(0, upperBound);
 
-    return distribution(generator);
+    //return distribution(generator);
+
+    return 0;
 }
 

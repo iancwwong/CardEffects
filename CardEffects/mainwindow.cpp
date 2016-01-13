@@ -137,8 +137,8 @@ void MainWindow::on_actionAbout_triggered()
 void MainWindow::on_actionNew_Game_triggered()
 {
     // Create a new game engine, and attach to command parser
-    this->gameEngine = new GameEngine();
-    this->commandParser->SetGameEngine(this->gameEngine);
+    this->gameObject = new GameObject();
+    this->commandParser->SetGameObject(gameObject);
 
     // Print to log box
     QString gameStartString = "> Game started!";

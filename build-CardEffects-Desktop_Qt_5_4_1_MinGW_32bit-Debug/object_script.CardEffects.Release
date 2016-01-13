@@ -1,0 +1,12 @@
+INPUT(
+./release/main.o
+./release/mainwindow.o
+./release/gameengine.o
+./release/commandparser.o
+./release/action.o
+./release/cardobj.o
+./release/player.o
+./release/cardarea.o
+./release/gameobject.o
+./release/moc_mainwindow.o
+);
