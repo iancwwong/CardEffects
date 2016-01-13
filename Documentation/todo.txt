@@ -3,6 +3,9 @@
 * Have a "gameLossType" variable in GameState, as a player can also lose the game when their deck is empty in the draw phase.
 
 == Coding
+* implement gameState
+
+* implement CardObj
 
 * Make command parsing handle optional parameters
 	eg summon h2 1
